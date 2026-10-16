@@ -1,0 +1,29 @@
+---
+permalink: "/sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in collections.all %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | url }}</loc>
+      <lastmod>{{ page.date | today }}</lastmod>
+      {% if page.url == "/" %}
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+      {% elif page.url == "/planos/" or page.url == "/guias/" %}
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+      {% elif "/planos/" in page.url or "/guias/" in page.url %}
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+      {% elif "/regioes/" in page.url or "protecao-veicular-em-" in page.url or "protecao-veicular-no-" in page.url or "protecao-veicular-na-" in page.url %}
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+      {% else %}
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+      {% endif %}
+    </url>
+  {% endfor %}
+</urlset>

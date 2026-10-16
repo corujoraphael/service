@@ -1,0 +1,18 @@
+# Build output
+_site/
+
+# Dependencies
+node_modules/
+
+# Cache
+.cache/
+.nyc_output/
+coverage/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db

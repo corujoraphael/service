@@ -1,0 +1,42 @@
+{
+  "url": "https://loogangra.com.br",
+  "name": "LOOG Proteção Veicular",
+  "shortName": "LOOG Angra",
+  "slogan": "Transparência e Rapidez em cada km",
+  "tagline": "Mais que uma proteção, o compromisso de quem está na estrada com você.",
+  "description": "Proteção veicular inteligente em Angra dos Reis e Costa Verde. Cobertura completa contra roubo, furto, colisão, 100% FIPE e assistência 24h sem burocracia.",
+  "phone": "+5524998814288",
+  "phoneDisplay": "(24) 99881-4288",
+  "whatsapp": "5524998814288",
+  "whatsappDisplay": "(24) 99881-4288",
+  "whatsappMessage": "Olá! Vim pelo site da LOOG e gostaria de fazer uma cotação rápida para o meu veículo.",
+  "assistance24h": "0800 000 0000",
+  "email": "contato@loogprotecaoveicular.com.br",
+  "instagram": "loog_oficial",
+  "address": {
+    "city": "Angra dos Reis",
+    "state": "RJ",
+    "region": "Costa Verde",
+    "country": "Brasil"
+  },
+  "coordinates": {
+    "lat": "-23.0067",
+    "lon": "-44.3181"
+  },
+  "googleRating": {
+    "score": "5.0",
+    "stars": "★★★★★",
+    "text": "Nota 5.0 no Google",
+    "url": "https://share.google/jLpTHCD5LxjC3ilW0"
+  },
+  "consultant": {
+    "name": "Consultoria Autorizada LOOG",
+    "role": "Atendimento Regional Angra dos Reis",
+    "region": "Angra dos Reis e Costa Verde - RJ",
+    "whatsapp": "5524998814288",
+    "whatsappDisplay": "(24) 99881-4288",
+    "badge": "CONSULTOR LOCAL EM ANGRA",
+    "image": "/imgs/consultor.webp",
+    "description": "Atendimento humanizado e sem intermediários. Nosso papel é tirar todas as suas dúvidas com transparência absoluta e encontrar a proteção ideal para o seu veículo."
+  }
+}

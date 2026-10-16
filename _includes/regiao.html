@@ -1,0 +1,431 @@
+---
+layout: layout.html
+---
+
+<article class="regiao-article">
+  <div class="container">
+    <nav class="breadcrumb font-orbitron" aria-label="Navegação estrutural">
+      <a href="/">Início</a> &gt; <span>Atendimento Regional</span> &gt; <span>{{ title }}</span>
+    </nav>
+
+    <!-- 1. Hero da Região -->
+    <header class="regiao-header text-center">
+      <div class="hero-badge font-orbitron">
+        <span class="badge-dot"></span>
+        COBERTURA REGIONAL COSTA VERDE
+      </div>
+      <h1 class="regiao-title">{{ title }}</h1>
+      <p class="regiao-lead">{{ description }}</p>
+
+      <div class="regiao-actions">
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar proteção veicular com o consultor para atendimento em ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" 
+           target="_blank" 
+           rel="noopener nofollow" 
+           class="btn btn--whatsapp btn--large btn--pulse"
+           onclick="if(typeof trackWhatsAppClick === 'function') trackWhatsAppClick('hero_regiao', '{{ regionName | default: 'geral' }}')">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span>Cotar no WhatsApp para {{ regionName | default: 'minha região' }}</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="regiao-trust-grid">
+      <div class="trust-item">
+        <span class="trust-icon">🛡️</span>
+        <div>
+          <strong>100% Tabela FIPE</strong>
+          <small>Indenização integral conforme regulamento</small>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">🚗</span>
+        <div>
+          <strong>Reboque 24 Horas</strong>
+          <small>Guincho sem limite de KM em sinistros</small>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">📱</span>
+        <div>
+          <strong>Vistoria 100% Digital</strong>
+          <small>Pelo celular, sem ir a oficinas</small>
+        </div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon">⚡</span>
+        <div>
+          <strong>Sem SPC / Serasa</strong>
+          <small>Adesão facilitada pelo veículo</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Introdução Contextualizada e Alerta de Risco Local -->
+    {% if localIntro %}
+    <div class="regiao-intro-wrap">
+      <p class="regiao-intro-p">{{ localIntro }}</p>
+      {% if localContext %}
+      <p class="regiao-intro-p">{{ localContext }}</p>
+      {% endif %}
+
+      {% if localRiskTitle and localRiskDesc %}
+      <div class="regiao-risk-alert">
+        <div class="regiao-risk-icon">⚠️</div>
+        <div class="regiao-risk-content">
+          <strong>{{ localRiskTitle }}</strong>
+          <p>{{ localRiskDesc }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% else %}
+    <div class="regiao-content-body">
+      {{ content }}
+    </div>
+    {% endif %}
+
+    <!-- 3. Módulo Visual de Coberturas (Fotos Oficiais da LOOG) -->
+    <div class="section-header text-center" style="margin-top: 50px;">
+      <span class="section-tag font-orbitron">PROTEÇÃO COMPLETA NA COSTA VERDE</span>
+      <h2 class="section-title">O que está coberto no seu <span class="highlight-cyan">veículo</span></h2>
+      <p class="section-subtitle">Tudo o que você precisa para rodar protegido pelas ruas e estradas da Costa Verde, sem surpresas.</p>
+    </div>
+
+    <div class="coberturas-grid">
+      <div class="cobertura-card">
+        <div class="cobertura-img-wrap">
+          <img src="/imgs/coverages/theft.webp" alt="Proteção contra Roubo e Furto" loading="lazy">
+          <span class="cobertura-badge font-orbitron">100% FIPE</span>
+        </div>
+        <div class="cobertura-content">
+          <h3 class="cobertura-title">Roubo ou Furto</h3>
+          <p>Indenização integral de até 100% da Tabela FIPE com rastreamento inteligente de precisão.</p>
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar proteção contra Roubo e Furto para ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" target="_blank" rel="noopener nofollow" class="cobertura-link">
+            <span>Cotar cobertura &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cobertura-card">
+        <div class="cobertura-img-wrap">
+          <img src="/imgs/coverages/collision.webp" alt="Proteção contra Colisão e Batidas" loading="lazy">
+          <span class="cobertura-badge font-orbitron">PERDA TOTAL OU PARCIAL</span>
+        </div>
+        <div class="cobertura-content">
+          <h3 class="cobertura-title">Colisão</h3>
+          <p>Reparo ágil em oficinas credenciadas de primeira linha ou indenização rápida por perda total.</p>
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar proteção contra Colisão para ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" target="_blank" rel="noopener nofollow" class="cobertura-link">
+            <span>Cotar cobertura &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cobertura-card">
+        <div class="cobertura-img-wrap">
+          <img src="/imgs/coverages/nature.webp" alt="Proteção contra Alagamento e Enchente" loading="lazy">
+          <span class="cobertura-badge font-orbitron">FENÔMENOS DA NATUREZA</span>
+        </div>
+        <div class="cobertura-content">
+          <h3 class="cobertura-title">Alagamento e Granizo</h3>
+          <p>Proteção essencial contra inundações, quedas de árvores e tempestades severas no litoral.</p>
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar proteção contra Alagamento para ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" target="_blank" rel="noopener nofollow" class="cobertura-link">
+            <span>Cotar cobertura &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cobertura-card">
+        <div class="cobertura-img-wrap">
+          <img src="/imgs/coverages/assistance.webp" alt="Assistência 24h e Guincho sem limite de KM" loading="lazy">
+          <span class="cobertura-badge font-orbitron">NACIONAL 24 HORAS</span>
+        </div>
+        <div class="cobertura-content">
+          <h3 class="cobertura-title">Guincho & Socorro 24h</h3>
+          <p>Reboque sem limite de KM em sinistros, chaveiro, troca de pneus e recarga de bateria na Rio-Santos e todo o Brasil.</p>
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar assistência 24h com guincho para ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" target="_blank" rel="noopener nofollow" class="cobertura-link">
+            <span>Cotar cobertura &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cobertura-card">
+        <div class="cobertura-img-wrap">
+          <img src="/imgs/coverages/third-party.webp" alt="Proteção de Danos a Terceiros" loading="lazy">
+          <span class="cobertura-badge font-orbitron">TRANQUILIDADE TOTAL</span>
+        </div>
+        <div class="cobertura-content">
+          <h3 class="cobertura-title">Danos a Terceiros</h3>
+          <p>Cobertura material e corporal para outros veículos e pessoas envolvidas em caso de sinistro.</p>
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar proteção contra Terceiros para ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" target="_blank" rel="noopener nofollow" class="cobertura-link">
+            <span>Cotar cobertura &rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cobertura-card">
+        <div class="cobertura-img-wrap">
+          <img src="/imgs/coverages/reserve.webp" alt="Carro Reserva" loading="lazy">
+          <span class="cobertura-badge font-orbitron">NÃO FIQUE A PÉ</span>
+        </div>
+        <div class="cobertura-content">
+          <h3 class="cobertura-title">Carro Reserva</h3>
+          <p>Opções de 7, 15 ou até 30 dias para garantir que a sua rotina de trabalho ou família nunca pare.</p>
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de cotar plano com Carro Reserva para ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" target="_blank" rel="noopener nofollow" class="cobertura-link">
+            <span>Cotar cobertura &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Diferenciais Locais Específicos em Cards Interativos -->
+    {% if localDiferenciais %}
+    <div class="section-header text-center" style="margin-top: 60px;">
+      <span class="section-tag font-orbitron">SOLUÇÕES PARA SEU DIA A DIA</span>
+      <h2 class="section-title">Por que contratar em <span class="highlight-cyan">{{ regionName | default: 'sua região' }}</span></h2>
+      <p class="section-subtitle">Vantagens desenhadas sob medida para as características e demandas dos motoristas locais.</p>
+    </div>
+
+    <div class="regiao-features-grid">
+      {% for dif in localDiferenciais %}
+      <div class="regiao-feature-card">
+        <div class="regiao-feature-icon">{{ dif.icon | default: '🛡️' }}</div>
+        <h3>{{ dif.title }}</h3>
+        <p>{{ dif.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- 5. Vitrine de Planos com Preços Transparentes -->
+    <div class="section-header text-center" style="margin-top: 60px;">
+      <span class="section-tag font-orbitron">COBERTURAS SOB MEDIDA</span>
+      <h2 class="section-title">Planos Disponíveis para <span class="highlight-cyan">{{ regionName | default: 'sua região' }}</span></h2>
+      <p class="section-subtitle">Escolha a categoria do seu veículo e solicite uma simulação personalizada em segundos.</p>
+    </div>
+
+    <div class="planos-cards-grid">
+      {% for plano in collections.planos %}
+      <div class="plan-card {% if plano.data.popular %}plan-card--featured{% endif %}">
+        {% if plano.data.popular %}
+          <div class="plan-badge font-orbitron">MAIS ESCOLHIDO</div>
+        {% endif %}
+        <span class="plan-type font-orbitron">{{ plano.data.type }}</span>
+        <h3 class="plan-title">{{ plano.data.title }}</h3>
+        <p class="plan-desc">{{ plano.data.description }}</p>
+        
+        <div class="plan-price">
+          <span class="plan-price-label">Mensalidade acessível</span>
+          <strong class="plan-price-val font-orbitron">{{ plano.data.price }}</strong>
+        </div>
+
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Quero cotar o plano ' | append: plano.data.title | append: ' com o consultor para atendimento em ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" 
+           target="_blank" 
+           rel="noopener nofollow" 
+           class="btn btn--whatsapp btn--block"
+           onclick="if(typeof trackWhatsAppClick === 'function') trackWhatsAppClick('plan_card_regiao', '{{ plano.data.title }}_{{ regionName | default: 'geral' }}')">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          <span>Cotar no WhatsApp</span>
+        </a>
+
+        <a href="{{ plano.url }}" class="plan-details-link">Ver detalhes da cobertura &rarr;</a>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- 6. Bairros Atendidos -->
+    {% if bairrosAtendidos %}
+    <div class="regiao-bairros-box">
+      <span class="section-tag font-orbitron">COBERTURA INTEGRAL</span>
+      <h3>Localidades e Bairros Atendidos em {{ regionName }}</h3>
+      <p>Nosso atendimento alcança rapidamente todas as principais vias e comunidades da região:</p>
+      <div class="bairros-badges-list">
+        {% for bairro in bairrosAtendidos %}
+        <span class="bairro-pill">{{ bairro }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- 7. Tabela Comparativa (LOOG vs Seguro Tradicional) -->
+    <div class="section-header text-center" style="margin-top: 60px;">
+      <span class="section-tag font-orbitron">TRANSPARÊNCIA E ECONOMIA</span>
+      <h2 class="section-title">LOOG vs <span class="highlight-cyan">Seguro Tradicional</span></h2>
+      <p class="section-subtitle">Entenda por que você economiza até 60% com mais liberdade e sem burocracia.</p>
+    </div>
+
+    <div class="comparativo-table-wrapper">
+      <table class="comparativo-table">
+        <thead>
+          <tr>
+            <th>Recurso & Benefício</th>
+            <th class="col-loog">LOOG Proteção</th>
+            <th>Seguro Tradicional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Economia no valor final</strong></td>
+            <td class="col-loog"><span class="badge-success">Até 60% mais barato</span></td>
+            <td>Valores inflacionados</td>
+          </tr>
+          <tr>
+            <td><strong>Análise de perfil de condutor</strong></td>
+            <td class="col-loog"><span class="icon-check">✓</span> Não faz (qualquer habilitado)</td>
+            <td><span class="icon-cross">✗</span> Avalia idade, CEP, estado civil</td>
+          </tr>
+          <tr>
+            <td><strong>Consulta SPC e Serasa</strong></td>
+            <td class="col-loog"><span class="icon-check">✓</span> Sem consulta cadastral</td>
+            <td><span class="icon-cross">✗</span> Recusa por restrições</td>
+          </tr>
+          <tr>
+            <td><strong>Indenização Tabela FIPE</strong></td>
+            <td class="col-loog"><span class="icon-check">✓</span> Até 100% conforme regulamento</td>
+            <td>Geralmente com descontos</td>
+          </tr>
+          <tr>
+            <td><strong>Guincho e Assistência 24h</strong></td>
+            <td class="col-loog"><span class="icon-check">✓</span> Sem limite de KM nacional</td>
+            <td>Quilometragem restrita</td>
+          </tr>
+          <tr>
+            <td><strong>Vistoria Digital Express</strong></td>
+            <td class="col-loog"><span class="icon-check">✓</span> 100% pelo celular no mesmo dia</td>
+            <td>Agendamentos demorados</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 8. Card do Consultor Oficial Autorizado -->
+    <div class="consultor-card" style="margin-top: 50px;">
+      <div class="consultor-avatar-col">
+        <div class="consultor-avatar-circle">
+          <picture>
+            <source srcset="/imgs/consultor.webp" type="image/webp">
+            <img src="/imgs/consultor.png" 
+                 alt="Consultor Autorizado LOOG na Costa Verde" 
+                 class="consultor-photo-img" 
+                 width="140" 
+                 height="140" 
+                 loading="lazy">
+          </picture>
+        </div>
+        <span class="consultor-badge font-orbitron">CONSULTOR REGIONAL</span>
+      </div>
+      <div class="consultor-info-col">
+        <span class="section-tag font-orbitron">ATENDIMENTO HUMANO E TRANSPARENTE</span>
+        <h2 class="consultor-title">
+          Fale direto com o consultor para <span class="highlight-cyan">{{ regionName | default: 'sua região' }}</span>
+        </h2>
+        <p class="consultor-desc">
+          Sem centrais robotizadas ou respostas prontas. Nosso consultor atende diretamente pelo WhatsApp para tirar todas as suas dúvidas sobre coberturas, valores e vistoria digital rápida em {{ regionName | default: 'Angra dos Reis e Costa Verde' }}.
+        </p>
+        <div class="consultor-contact-pills">
+          <div class="consultor-pill">
+            <span class="pill-icon">📍</span>
+            <span>Atendimento em {{ regionName | default: 'toda a Costa Verde' }}</span>
+          </div>
+          <div class="consultor-pill">
+            <span class="pill-icon">⚡</span>
+            <span>Resposta Rápida no WhatsApp</span>
+          </div>
+          <div class="consultor-pill">
+            <span class="pill-icon">🤝</span>
+            <span>Simulação Sem Compromisso</span>
+          </div>
+        </div>
+        <div class="consultor-action">
+          <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de falar com o consultor sobre proteção veicular para atendimento em ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" 
+             target="_blank" 
+             rel="noopener nofollow" 
+             class="btn btn--whatsapp btn--large">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>Falar com o Consultor no WhatsApp {{ site.whatsappDisplay }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Simulador Rápido Interativo -->
+    <div class="simulador-card" style="margin-top: 50px;">
+      <div class="simulador-content text-center">
+        <span class="section-tag font-orbitron">SIMULAÇÃO INSTANTÂNEA</span>
+        <h2 class="simulador-title">Simule o valor para o seu veículo em {{ regionName | default: 'sua região' }}</h2>
+        <p>Preencha os dados abaixo e receba a proposta personalizada direto no seu WhatsApp em menos de 1 minuto:</p>
+        
+        <form class="simulador-form" onsubmit="enviarSimuladorRegiao(event)">
+          <input type="hidden" class="reg-sim-cidade" value="{{ regionName | default: 'Costa Verde' }}">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Seu Nome Completo:</label>
+              <input type="text" class="reg-sim-nome" placeholder="Ex: Raphael Silva" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label>Tipo do Veículo:</label>
+              <select class="reg-sim-tipo" required>
+                <option value="Carro de Passeio">Carro de Passeio</option>
+                <option value="Moto">Moto</option>
+                <option value="Carro de Aplicativo (Uber/99)">Carro de Aplicativo (Uber/99)</option>
+                <option value="Van ou Utilitário">Van ou Utilitário / Frota</option>
+                <option value="Caminhonete / SUV">Caminhonete 4x4 / SUV</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Modelo e Ano do Veículo:</label>
+              <input type="text" class="reg-sim-veiculo" placeholder="Ex: Corolla 2021 ou Fan 160" required>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn--whatsapp btn--large btn--block btn--pulse">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>Receber Cotação no WhatsApp {{ site.whatsappDisplay }}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 10. FAQ Local em Accordion Interativo -->
+    {% if localFaqs %}
+    <div class="section-header text-center" style="margin-top: 60px;">
+      <span class="section-tag font-orbitron">TIRE SUAS DÚVIDAS</span>
+      <h2 class="section-title">Perguntas Frequentes em <span class="highlight-cyan">{{ regionName }}</span></h2>
+      <p class="section-subtitle">Dúvidas comuns de quem mora ou roda com seu veículo na região.</p>
+    </div>
+
+    <div class="faq-accordion">
+      {% for faq in localFaqs %}
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>{{ faq.question }}</span>
+          <span class="faq-chevron">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- 11. Banner Final com Chamada de Ação Forte -->
+    <div class="regiao-final-cta text-center" style="margin-top: 40px;">
+      <h3 class="font-orbitron">Proteja seu patrimônio em {{ regionName | default: 'sua região' }} hoje mesmo</h3>
+      <p>Vistoria digital pelo smartphone e ativação rápida. Sem papelada e sem burocracia.</p>
+      <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Gostaria de fazer uma cotação rápida para meu veículo em ' | append: regionName | default: 'Costa Verde' | append: '.' | url_encode }}" 
+         target="_blank" 
+         rel="noopener nofollow" 
+         class="btn btn--whatsapp btn--large">
+        <span>Fazer Cotação no WhatsApp {{ site.whatsappDisplay }}</span>
+      </a>
+    </div>
+  </div>
+</article>

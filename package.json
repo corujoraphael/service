@@ -1,0 +1,30 @@
+{
+  "name": "loog-angra",
+  "version": "1.0.0",
+  "description": "Loog Angra - Proteção Veicular e Assistência 24 Horas em Angra dos Reis e Região Costa Verde",
+  "main": ".eleventy.js",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy",
+    "generate-keywords": "node generateKeywords.js",
+    "process-images": "bash scripts/processar-imagem.sh"
+  },
+  "keywords": [
+    "protecao-veicular",
+    "angra-dos-reis",
+    "reboque-24h",
+    "rastreador-veicular",
+    "seguro-auto"
+  ],
+  "author": "Loog Angra",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy-img": "^6.0.2",
+    "clean-css": "^5.3.3",
+    "html-minifier": "^4.0.0",
+    "purgecss": "^8.0.0",
+    "terser": "^5.46.1"
+  }
+}

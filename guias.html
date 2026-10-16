@@ -1,0 +1,64 @@
+---
+layout: layout.html
+title: "Central de Guias & Informações sobre Proteção Veicular | LOOG Angra"
+description: "Tire todas as suas dúvidas sobre proteção veicular em Angra dos Reis. Comparações reais com seguro tradicional, funcionamento da vistoria digital e planos especiais."
+permalink: "/guias/"
+---
+
+<section class="section section--guias-index">
+  <div class="container">
+    <nav class="breadcrumb font-orbitron" aria-label="Navegação estrutural">
+      <a href="/">Início</a> &gt; <span>Guias & Dúvidas</span>
+    </nav>
+
+    <div class="section-header text-center">
+      <div class="hero-badge font-orbitron">
+        <span class="badge-dot"></span>
+        CONHECIMENTO TRANSPARENTE
+      </div>
+      <h1 class="section-title">
+        Central de Guias & Dúvidas sobre <span class="highlight-cyan">Proteção Veicular</span>
+      </h1>
+      <p class="section-subtitle">
+        Informação clara, sem termos técnicos complicados ou entrelinhas. Tudo o que você precisa saber para proteger seu carro ou moto em Angra dos Reis e Costa Verde com total segurança.
+      </p>
+    </div>
+
+    <div class="guias-grid">
+      {% for guia in collections.guias %}
+      <article class="guia-card">
+        <div class="guia-card-header">
+          <span class="guia-badge font-orbitron">{{ guia.data.category | default: "GUIA PRÁTICO" }}</span>
+          <span class="guia-read-time font-orbitron">🕒 {{ guia.data.readingTime | default: "5 min" }}</span>
+        </div>
+        <h2 class="guia-card-title">
+          <a href="{{ guia.url }}">{{ guia.data.title }}</a>
+        </h2>
+        <p class="guia-card-desc">{{ guia.data.description }}</p>
+        <div class="guia-card-footer">
+          <a href="{{ guia.url }}" class="guia-read-link font-orbitron">
+            Ler guia completo &rarr;
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Banner de Atendimento com Consultor Local -->
+    <div class="guias-help-banner">
+      <div class="guias-help-content">
+        <span class="section-tag font-orbitron">CONSULTORIA PESSOAL EM ANGRA</span>
+        <h3>Não encontrou a resposta para sua dúvida?</h3>
+        <p>Converse diretamente com o consultor local da LOOG em Angra dos Reis. Tire suas dúvidas em tempo real pelo WhatsApp.</p>
+      </div>
+      <div class="guias-help-action">
+        <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Estive lendo a central de guias da LOOG e gostaria de tirar algumas dúvidas com o consultor em Angra.' | url_encode }}" 
+           target="_blank" 
+           rel="noopener nofollow" 
+           class="btn btn--whatsapp btn--large">
+          <span>Conversar no WhatsApp (24) 99881-4288</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
