@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..900;1,300..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
   </noscript>
 
-  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/style.css?v={{ '' | buildVersion }}">
 </head>
 <body class="dark-theme lp-body">
   <!-- Header minimalista sem links de saída para evitar fuga de tráfego pago -->
@@ -76,6 +76,6 @@
     </a>
   </div>
 
-  <script src="/js/index.js" defer></script>
+  <script src="/js/index.js?v={{ '' | buildVersion }}" defer></script>
 </body>
 </html>

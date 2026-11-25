@@ -103,6 +103,9 @@ module.exports = function (eleventyConfig) {
     return `${yyyy}-${mm}-${dd}`;
   });
 
+  const buildTimestamp = Date.now().toString(36);
+  eleventyConfig.addFilter("buildVersion", () => buildTimestamp);
+
   eleventyConfig.addFilter("formatDateBR", (dateStr) => {
     if (!dateStr) return "";
     const str = String(dateStr).trim();
