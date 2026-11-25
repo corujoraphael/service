@@ -3313,7 +3313,8 @@ details[open] .faq-chevron {
 .lp-price-pill {
   display: inline-flex;
   align-items: baseline;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   background: rgba(0, 210, 255, 0.12);
   border: 1px solid rgba(0, 210, 255, 0.45);
   border-radius: var(--radius-md);
@@ -3325,17 +3326,20 @@ details[open] .faq-chevron {
   font-size: 0.78rem;
   color: var(--text);
   letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .lp-price-pill strong {
   font-size: 1.75rem;
   color: var(--loog-cyan);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .lp-price-pill strong span {
   font-size: 0.9rem;
   color: var(--text-muted);
+  margin-left: 4px;
 }
 
 .lp-title {
@@ -3398,6 +3402,27 @@ details[open] .faq-chevron {
 .lp-form-card .simulador-form {
   display: grid;
   gap: 14px;
+}
+
+.lp-form-card .form-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 42px;
+  cursor: pointer;
+}
+
+.lp-form-card .form-field select option {
+  background-color: #0b0f19;
+  color: #f8fafc;
+}
+
+.lp-steps-grid .passo-icon {
+  opacity: 1;
+  filter: none;
 }
 
 .lp-section {
@@ -3479,8 +3504,27 @@ details[open] .faq-chevron {
   .lp-hero {
     padding: 28px 0 36px;
   }
+  .lp-hero .hero-badge {
+    font-size: 0.68rem;
+    padding: 6px 12px;
+  }
+  .lp-price-pill {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .lp-price-pill strong {
+    font-size: 1.55rem;
+  }
+  .lp-highlight-val {
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
   .lp-form-card {
     padding: 20px;
+  }
+  .lp-footer {
+    padding-bottom: 92px;
   }
   .lp-sticky-bar {
     position: fixed;
