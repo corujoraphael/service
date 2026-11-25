@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ pageTitle | default: 'Cotação Rápida LOOG — Proteção Veicular a partir de R$ 34,90/mês' }}</title>
+  <meta name="description" content="{{ description | default: 'Proteja seu carro ou moto em Angra dos Reis e Costa Verde a partir de R$ 34,90/mês. Sem análise de perfil e sem SPC/Serasa. Simule agora no WhatsApp.' }}">
+
+  <!-- Favicons Oficiais da LOOG -->
+  <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/imgs/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/imgs/favicon-192x192.png">
+
+  <!-- Preload da imagem hero -->
+  <link rel="preload" as="image" href="/imgs/hero-mobile-480.webp" type="image/webp" fetchpriority="high">
+
+  <!-- Google Fonts assíncrono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..900;1,300..900&family=Orbitron:wght@400..900&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..900;1,300..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300..900;1,300..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  </noscript>
+
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body class="dark-theme lp-body">
+  <!-- Header minimalista sem links de saída para evitar fuga de tráfego pago -->
+  <header class="lp-header">
+    <div class="container lp-header-inner">
+      <div class="lp-brand">
+        <picture>
+          <source srcset="/imgs/logo.webp" type="image/webp">
+          <img src="/imgs/logo.png" alt="LOOG Proteção Veicular" width="150" height="25" fetchpriority="high">
+        </picture>
+      </div>
+      <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Vi o anúncio da LOOG (a partir de R$ 34,90/mês) e quero fazer minha cotação no WhatsApp.' | url_encode }}"
+         target="_blank"
+         rel="noopener nofollow"
+         class="btn btn--whatsapp btn--small lp-header-cta"
+         onclick="if(typeof trackLPWhatsApp === 'function') trackLPWhatsApp('lp_header', 'cotar_agora')">
+        <span>Cotar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    {{ content }}
+  </main>
+
+  <!-- Rodapé enxuto apenas com aviso regulatório -->
+  <footer class="lp-footer">
+    <div class="container">
+      <p class="lp-footer-legal">
+        <strong>Aviso Regulatório:</strong> A LOOG opera sob o regime de proteção veicular mútua (Lei Complementar nº 213/2025). A proteção veicular não se confunde com seguro mercantil privado (Decreto-Lei nº 73/66). Valores a partir de R$ 34,90/mês conforme categoria, plano selecionado, vistoria digital e regulamento associativo.
+      </p>
+      <p class="lp-footer-copy">{{ site.name }} &copy; <span id="year">2026</span> — Atendimento em Angra dos Reis e Costa Verde - RJ.</p>
+    </div>
+  </footer>
+
+  <!-- Barra fixa inferior no Mobile para conversão imediata -->
+  <div class="lp-sticky-bar">
+    <div class="lp-sticky-info">
+      <small>Planos saindo de</small>
+      <strong class="font-orbitron">R$ 34,90/mês</strong>
+    </div>
+    <a href="https://wa.me/{{ site.whatsapp }}?text={{ 'Olá! Vi o anúncio da LOOG (planos a partir de R$ 34,90/mês) e quero simular para o meu veículo.' | url_encode }}"
+       target="_blank"
+       rel="noopener nofollow"
+       class="btn btn--whatsapp lp-sticky-btn"
+       onclick="if(typeof trackLPWhatsApp === 'function') trackLPWhatsApp('lp_sticky_mobile', 'simular_agora')">
+      <span>Simular no WhatsApp</span>
+    </a>
+  </div>
+
+  <script src="/js/index.js" defer></script>
+</body>
+</html>

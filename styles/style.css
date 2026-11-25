@@ -3271,6 +3271,253 @@ details[open] .faq-chevron {
   }
 }
 
+/* ============================================================
+   Landing Page de Conversão (/cotacao/) — Ads & Influencers
+   ============================================================ */
+.lp-body {
+  padding-bottom: 76px;
+}
+
+.lp-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(6, 8, 15, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.lp-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lp-hero {
+  position: relative;
+  padding: 44px 0 56px;
+  overflow: hidden;
+}
+
+.lp-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.lp-price-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  background: rgba(0, 210, 255, 0.12);
+  border: 1px solid rgba(0, 210, 255, 0.45);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  margin-bottom: 18px;
+}
+
+.lp-price-pill > span {
+  font-size: 0.78rem;
+  color: var(--text);
+  letter-spacing: 0.06em;
+}
+
+.lp-price-pill strong {
+  font-size: 1.75rem;
+  color: var(--loog-cyan);
+  line-height: 1;
+}
+
+.lp-price-pill strong span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.lp-title {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.lp-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+  max-width: 560px;
+}
+
+.lp-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+.lp-micro-trust {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.lp-form-card {
+  background: rgba(11, 15, 25, 0.92);
+  border: 1px solid rgba(0, 210, 255, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.lp-form-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--loog-cyan);
+  margin-bottom: 8px;
+}
+
+.lp-form-title {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.lp-form-sub {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.lp-form-card .simulador-form {
+  display: grid;
+  gap: 14px;
+}
+
+.lp-section {
+  padding: 56px 0;
+}
+
+.lp-section--highlights {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 0;
+}
+
+.lp-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.lp-highlight-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lp-highlight-val {
+  font-size: 1.45rem;
+  color: var(--loog-cyan);
+}
+
+.lp-highlight-label {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.lp-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.lp-section--faq {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border);
+}
+
+.lp-footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.lp-footer-legal {
+  max-width: 780px;
+  margin: 0 auto 10px;
+}
+
+.lp-sticky-bar {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .lp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .lp-highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lp-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .lp-hero {
+    padding: 28px 0 36px;
+  }
+  .lp-form-card {
+    padding: 20px;
+  }
+  .lp-sticky-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px;
+    background: rgba(6, 8, 15, 0.96);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 210, 255, 0.3);
+  }
+  .lp-sticky-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+  .lp-sticky-info small {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+  .lp-sticky-info strong {
+    font-size: 1rem;
+    color: var(--loog-cyan);
+  }
+  .lp-sticky-btn {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
+}
+
+
 
 
 

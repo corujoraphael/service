@@ -133,3 +133,45 @@ function trackWhatsAppClick(origem, detalhe) {
     console.debug('Analytics tracking info:', err);
   }
 }
+
+// Captura UTMs / ref para identificar qual anúncio ou influencer gerou o lead
+function getLPUtmTag() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get('utm_source') || params.get('ref') || '';
+    const campaign = params.get('utm_campaign') || '';
+    const parts = [source, campaign].filter(Boolean);
+    return parts.length ? parts.join(' / ') : '';
+  } catch {
+    return '';
+  }
+}
+
+function trackLPWhatsApp(origem, detalhe) {
+  const utm = getLPUtmTag();
+  trackWhatsAppClick(origem, utm ? `${detalhe}_${utm}` : detalhe);
+}
+
+function enviarSimuladorLP(e) {
+  e.preventDefault();
+
+  const nome = document.getElementById('lp-nome')?.value.trim() || '';
+  const tipo = document.getElementById('lp-tipo')?.value || '';
+  const veiculo = document.getElementById('lp-veiculo')?.value.trim() || '';
+  const utm = getLPUtmTag();
+
+  let mensagem =
+    `Olá! Vi a oferta da LOOG (a partir de R$ 34,90/mês) e quero cotar meu veículo:\n` +
+    `• Nome: ${nome}\n` +
+    `• Categoria: ${tipo}\n` +
+    `• Veículo/Ano: ${veiculo}`;
+
+  if (utm) {
+    mensagem += `\n• Campanha/Indicação: ${utm}`;
+  }
+
+  trackLPWhatsApp('lp_simulador', tipo);
+
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+}
