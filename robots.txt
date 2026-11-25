@@ -1,4 +1,4 @@
-Sitemap: https://loogangra.com.br/sitemap.xml
-
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://loogangra.com.br/sitemap.xml

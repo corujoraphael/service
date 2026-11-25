@@ -50,10 +50,23 @@
     "name": "{{ site.name }}",
     "alternateName": ["LOOG", "LOOG Angra", "LOOG Proteção Veicular Angra dos Reis"],
     "image": "{{ site.url }}/imgs/og-share.jpg",
+    "logo": "{{ site.url }}/imgs/logo.png",
     "@id": "{{ site.url }}#organization",
     "url": "{{ site.url }}",
     "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
     "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ site.address.city }}",
+      "addressRegion": "{{ site.address.state }}",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.coordinates.lat }},
+      "longitude": {{ site.coordinates.lon }}
+    },
     "areaServed": [
       {
         "@type": "City",

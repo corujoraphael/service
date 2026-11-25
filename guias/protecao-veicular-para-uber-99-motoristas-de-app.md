@@ -1,5 +1,6 @@
 ---
 title: "Proteção Veicular para Uber, 99 e Motoristas de Aplicativo em Angra dos Reis"
+pageTitle: "Proteção Veicular para Uber e 99 em Angra | LOOG"
 description: "Proteção completa para motoristas de app e táxi na Costa Verde: sem sobretaxas abusivas, com opção de carro reserva de até 30 dias e assistência 24h contínua."
 category: "MOTORISTAS PROFISSIONAIS"
 readingTime: "5 min de leitura"

@@ -39,6 +39,24 @@ layout: layout.html
         <div class="plan-items-body">
           {{ content }}
         </div>
+
+        <div class="plan-local-info" style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);">
+          <h3 class="font-orbitron" style="font-size: 1rem; margin-bottom: 12px;">Como funciona a adesão na Costa Verde</h3>
+          <p>
+            A contratação é 100% digital e sem consulta ao SPC/Serasa ou análise de perfil de condutor. Após a vistoria pelo celular, seu veículo passa a contar com cobertura em Angra dos Reis, Paraty, Mangaratiba e em toda a Rodovia Rio-Santos (BR-101), além de assistência 24 horas em todo o Brasil conforme o regulamento associativo.
+          </p>
+          <p style="margin-top: 12px;">
+            Saiba mais nos nossos guias:
+            <a href="/guias/como-contratar-protecao-veicular/">Como contratar passo a passo</a> ·
+            <a href="/guias/protecao-veicular-ou-seguro-qual-a-diferenca/">Proteção veicular ou seguro?</a> ·
+            <a href="/guias/como-funciona-a-protecao-veicular-em-angra/">Como funciona em Angra dos Reis</a>
+          </p>
+          <div class="bairros-badges-list" style="margin-top: 16px;">
+            {% for reg in collections.regioes %}
+              <a href="{{ reg.url }}" class="bairro-pill">{{ reg.data.regionName | default: reg.data.title }}</a>
+            {% endfor %}
+          </div>
+        </div>
       </div>
 
       <!-- Trust highlights -->
@@ -64,3 +82,55 @@ layout: layout.html
     </div>
   </div>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ title }}",
+  "description": "{{ description }}",
+  "serviceType": "{{ type | default: 'Proteção Veicular' }}",
+  "provider": {
+    "@type": "ProfessionalService",
+    "@id": "{{ site.url }}#organization",
+    "name": "{{ site.name }}"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Angra dos Reis" },
+    { "@type": "City", "name": "Paraty" },
+    { "@type": "City", "name": "Mangaratiba" }
+  ]{% if price %},
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "BRL",
+    "price": "{{ price | priceNumber }}",
+    "url": "{{ site.url }}{{ page.url }}"
+  }{% endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Planos",
+      "item": "{{ site.url }}/planos/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>

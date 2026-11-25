@@ -1,5 +1,6 @@
 ---
 title: "Proteção Veicular ou Seguro Auto: Qual a Diferença e Qual Vale a Pena?"
+pageTitle: "Proteção Veicular ou Seguro Auto? Diferenças | LOOG"
 description: "Entenda as diferenças reais entre proteção veicular e seguro tradicional: custos, mutualismo associativo, análise de perfil, nova regulamentação SUSEP/LC 213 e como economizar até 60%."
 category: "COMPARAÇÃO TRANSPARENTE"
 readingTime: "6 min de leitura"

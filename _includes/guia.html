@@ -38,7 +38,7 @@ layout: layout.html
         </div>
         <div class="guide-meta-details font-orbitron">
           <span>🕒 {{ readingTime | default: "5 min de leitura" }}</span>
-          <span>📅 Atualizado em {{ date | default: "2026-10-16" | today }}</span>
+          <span>📅 Atualizado em {{ date | default: "2026-10-16" | formatDateBR }}</span>
         </div>
       </div>
     </header>
@@ -132,11 +132,37 @@ layout: layout.html
       "url": "{{ site.url }}/imgs/logo.png"
     }
   },
-  "datePublished": "{{ date | default: '2026-10-16' | today }}",
-  "dateModified": "{{ date | default: '2026-10-16' | today }}",
+  "datePublished": "{{ date | default: '2026-10-16' }}",
+  "dateModified": "{{ date | default: '2026-10-16' }}",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{ site.url }}{{ page.url }}"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guias & Dúvidas",
+      "item": "{{ site.url }}/guias/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
 }
 </script>

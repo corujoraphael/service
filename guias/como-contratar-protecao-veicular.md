@@ -1,5 +1,6 @@
 ---
 title: "Como Contratar Proteção Veicular: Documentos, Vistoria e Passo a Passo Descomplicado"
+pageTitle: "Como Contratar Proteção Veicular em Angra | LOOG"
 description: "Saiba como contratar proteção veicular para carro ou moto em Angra dos Reis sem burocracia, sem consulta SPC/Serasa e com ativação no mesmo dia."
 category: "PASSO A PASSO"
 readingTime: "4 min de leitura"

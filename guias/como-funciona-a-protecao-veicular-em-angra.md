@@ -1,5 +1,6 @@
 ---
 title: "Como Funciona a Proteção Veicular em Angra dos Reis: Da Vistoria ao Reboque na Rio-Santos"
+pageTitle: "Como Funciona a Proteção Veicular em Angra | LOOG"
 description: "Veja o passo a passo de como funciona a proteção veicular da LOOG em Angra dos Reis: vistoria digital pelo celular, socorro 24h na Rio-Santos e indenização 100% FIPE."
 category: "GUIA LOCAL ANGRA DOS REIS"
 readingTime: "5 min de leitura"

@@ -10,6 +10,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./imgs");
   eleventyConfig.addPassthroughCopy("./fonts");
   eleventyConfig.addPassthroughCopy("./_headers");
+  eleventyConfig.addPassthroughCopy("./_redirects");
+  eleventyConfig.addPassthroughCopy("./robots.txt");
   eleventyConfig.addPassthroughCopy("./styles");
   eleventyConfig.addPassthroughCopy("./js");
 
@@ -99,6 +101,16 @@ module.exports = function (eleventyConfig) {
     const mm = String(now.getMonth() + 1).padStart(2, "0");
     const dd = String(now.getDate()).padStart(2, "0");
     return `${yyyy}-${mm}-${dd}`;
+  });
+
+  eleventyConfig.addFilter("formatDateBR", (dateStr) => {
+    if (!dateStr) return "";
+    const str = String(dateStr).trim();
+    const isoMatch = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (isoMatch) {
+      return `${isoMatch[3]}/${isoMatch[2]}/${isoMatch[1]}`;
+    }
+    return str;
   });
 
   eleventyConfig.addFilter("orderByDate", function (array, order = "desc") {
